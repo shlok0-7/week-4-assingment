@@ -15,7 +15,7 @@ const makeClone = (slide) => {
 track.prepend(makeClone(slides[count - 1]));
 track.append(makeClone(slides[0]));
 
-let position = 1; // track position: 0 = last clone, 1..count = real slides, count + 1 = first clone
+let position = 1; 
 let busy = false;
 let fallbackTimer;
 
@@ -23,7 +23,7 @@ function render(animate) {
   track.classList.toggle("is-instant", !animate);
   track.style.transform = `translateX(${-position * 100}%)`;
   if (!animate) {
-    void track.offsetWidth; // apply the instant jump before transitions return
+    void track.offsetWidth; 
     track.classList.remove("is-instant");
   }
 }
@@ -34,7 +34,7 @@ function updateIndicators() {
   current.textContent = String(index + 1).padStart(2, "0");
 }
 
-// After landing on a clone, jump (without animation) to the matching real slide.
+
 function settle() {
   clearTimeout(fallbackTimer);
   if (position === 0) position = count;
@@ -49,7 +49,7 @@ function goTo(target) {
   position = target;
   render(true);
   updateIndicators();
-  fallbackTimer = setTimeout(settle, DURATION + 100); // safety net if transitionend never fires
+  fallbackTimer = setTimeout(settle, DURATION + 100); 
 }
 
 track.addEventListener("transitionend", (e) => {
