@@ -5,11 +5,8 @@ const dots = slider.querySelector(".slider__dots");
 const current = slider.querySelector(".current-slide");
 const total = slider.querySelector(".total-slides");
 const count = slides.length;
-const DURATION = 500; // must match the CSS transition time (ms)
+const DURATION = 500; 
 
-// Clone the last and first slides and place them at the ends of the track.
-// Sliding onto a clone looks identical to sliding onto the real slide, which
-// lets the loop keep moving in the same direction at both boundaries.
 const makeClone = (slide) => {
   const clone = slide.cloneNode(true);
   clone.setAttribute("aria-hidden", "true");

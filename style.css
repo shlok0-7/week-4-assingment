@@ -32,15 +32,14 @@ h1 {
   overflow: hidden;
 }
 
-/* Sliding track: slides sit side by side and the whole row is moved with
-   transform: translateX(), which is GPU-accelerated. */
+
 .slider__track {
   display: flex;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
 }
 
-/* Used to jump between a clone and its real slide without animating. */
+
 .slider__track.is-instant {
   transition: none;
 }
