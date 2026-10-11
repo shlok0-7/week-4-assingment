@@ -32,17 +32,29 @@ h1 {
   overflow: hidden;
 }
 
-.slide[hidden] {
-  display: none;
+/* Sliding track: slides sit side by side and the whole row is moved with
+   transform: translateX(), which is GPU-accelerated. */
+.slider__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+/* Used to jump between a clone and its real slide without animating. */
+.slider__track.is-instant {
+  transition: none;
 }
 
 .slide {
+  flex: 0 0 100%;
+  min-width: 0;
   aspect-ratio: 16 / 9;
 }
 
 .slide img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -98,4 +110,10 @@ h1 {
 
 .slider__dot[aria-current="true"] {
   background: #315e48;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider__track {
+    transition: none;
+  }
 }
