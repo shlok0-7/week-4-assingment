@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="slider.js" defer></script>
+</head>
+
+<body>
+  <main class="page">
+    <header class="page-header">
+      <h1>Image Slider</h1>
+    </header>
+
+    <section class="slider" aria-label="Featured image slider">
+      <div class="slider__viewport">
+        <div class="slider__track">
+          <article class="slide"><img src="assets/1.webp" alt="Photo 1"></article>
+          <article class="slide"><img src="assets/2.jpg" alt="Photo 2"></article>
+          <article class="slide"><img src="assets/3.jpg" alt="Photo 3"></article>
+          <article class="slide"><img src="assets/4.jpg" alt="Photo 4"></article>
+        </div>
+
+        <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Previous slide">
+          <span aria-hidden="true">&#8592;</span>
+        </button>
+        <button class="slider__arrow slider__arrow--next" type="button" aria-label="Next slide">
+          <span aria-hidden="true">&#8594;</span>
+        </button>
+        <div class="slider__counter" aria-live="polite"><span class="current-slide">01</span><span
+            class="counter-divider">/</span><span class="total-slides">04</span></div>
+      </div>
+      <div class="slider__footer">
+        <div class="slider__dots" aria-label="Choose a slide"></div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
